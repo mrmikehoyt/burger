@@ -12,3 +12,4 @@ class ormBurger{
         }    
         
 }
+module.exports = ormBurger
