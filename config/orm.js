@@ -10,7 +10,7 @@ class ormBurger{
         return rows
       }
     
-    
+    //need 
       async insertOne () {
         const sql = `INSERT INTO burgers (burgername, devoured) VALUES (?, ?)`
         const [result] = await connection.query(sql, [this.burgername, this.devoured])
@@ -19,7 +19,7 @@ class ormBurger{
       }
     
       async updateOne () {
-        // ensure sleepy is a valid Boolean
+        // ensure devoured is a valid Boolean
         this.devoured = fixBool(this.devoured)
         const sql = `UPDATE burgers SET ? WHERE id = ?`
         await connection.query(sql, [
