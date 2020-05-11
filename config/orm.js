@@ -12,7 +12,7 @@ class ormBurger{
     
     
       async insertOne () {
-        const sql = `INSERT INTO cats (burgername, devoured) VALUES (?, ?)`
+        const sql = `INSERT INTO burgers (burgername, devoured) VALUES (?, ?)`
         const [result] = await connection.query(sql, [this.burgername, this.devoured])
         this.id = result.insertId
         return this
@@ -31,6 +31,17 @@ class ormBurger{
     
     }
     
+    function fixBool (prop) {
+        if (prop === 'false') prop = false
+        else if (prop === '0') prop = false
+        else if (prop === 0) prop = false
+        else if (prop === null) prop = false
+        else if (prop === undefined) prop = false
+        else prop = true
+        return prop
+    
+      
+    }
 
 module.exports = ormBurger
 
