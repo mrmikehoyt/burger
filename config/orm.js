@@ -1,1 +1,8 @@
-const mysql = require('connection.js')
+
+    selectAll(){
+    }
+    insertOne(){
+    }
+        updateOne(){
+        }    
+     
