@@ -1,15 +1,12 @@
 const mysql = require('connection.js')
 class ormBurger{
-    constructor ()
+    constructor (burgername, devoured = false)
     {
+        this.burgername = burgername
+        this.devoured - devoured
+    }
         
     }
-    selectAll(){
-    }
-    insertOne(){
-    }
-        updateOne(){
-        }    
-        
-}
+
 module.exports = ormBurger
+
