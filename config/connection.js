@@ -1,5 +1,6 @@
+//to require mysql
 const mysql = require("mysql");
-
+//code to connect node to mysql database burgers_db
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -15,4 +16,5 @@ connection.connect(function(err) {
   }
   console.log("connected as id " + connection.threadId);
 });
+//exporting connection file (connection to connect node to mysql database burgers_db)
 module.exports = connection;
