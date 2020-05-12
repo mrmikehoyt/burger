@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+  <head>   
+    <title>Eat Da Burger!</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/burger_style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/burgerlogo.png">
+  </head>
+  <body>
+    <!-- Image and text -->
+    
+
+
+    <!-- Page Container -->
+    <div class="container">  
+<center><img src="/assets/img/burger.png" width="300" height="300" class="d-inline-block align-top" alt="Homelogo"></center>
+<center><h3>Eat Da Burger</h3></center>
+      <!-- Burger Content from index.handlebars -->
+      {{{body}}}         
+            
+        <div class="row">
+          <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <div class="card my-4">
+                <div class="card-body">         
+                  <div class="form-group">
+                    <label for="new_burger"></label>
+                    <textarea class="form-control" rows="4" id="new_burger" name="burger_name"></textarea>
+                    <button id="submit-button" type="submit" class="btn btn-primary mx-auto mt-4">  Submit!</button> 
+                            
+
+                  </div>
+                </div> 
+              </div>
+            </div>
+                     
+          <div class="col-md-3"></div> 
+        
+        </div>
+    </div>
+<center><h5>Enter a burger you want to eat and click the submit button</h5></center>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/front.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
