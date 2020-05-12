@@ -1,50 +1,31 @@
-const mysql = require('connection.js')
-class ormBurger{
-    constructor (burgername, devoured = false)
-    {
-        this.burgername = burgername
-        this.devoured - devoured
-    }
-    static async selectAll () {
-        const [rows] = await connection.query(`SELECT * FROM burgers;`)
-        return rows
-      }
-    
-    //need 
-      async insertOne (burgername) {
-        const sql = `INSERT INTO burgers ??`
-        const [result] = await connection.query(sql, [this.burgername])
-        burgername
-        this.id = result.insertId
-        return this
-      }
-    
-      async updateOne (burgername,eaten) {
-        // ensure devoured is a valid Boolean
-        this.devoured = fixBool(this.devoured)
-        const sql = `UPDATE burgers SET ?? WHERE id = ??`
-        burgername,
-        eaten
-        await connection.query(sql, [
-          { burgername: this.burgername, devoured: this.devoured },
-          this.id
-        ])
-        return this
-      }
-    
-    }
-    
-    function fixBool (prop) {
-        if (prop === 'false') prop = false
-        else if (prop === '0') prop = false
-        else if (prop === 0) prop = false
-        else if (prop === null) prop = false
-        else if (prop === undefined) prop = false
-        else prop = true
-        return prop
-    
+const mysql = require('../config/connection')
+
+var connection = require('./connection.js');
+//contains all my sqlquerys that are used / logic 
+  const orm = {
+    selectAll: function( tablename,cb){
+
+      connection.query('SELECT * FROM ??;', [tablename], function(err, result){
+        if (err) throw err;
+        // console.log(result);
+         cb(result);
+      })
+    },
+    insertOne: function (tablename, colname, burger_name, cb) {
+		
+      connection.query("INSERT INTO ?? (??) VALUES (?)", [ tablename ,colname, burger_name], function (err, result) {
+        if (err) throw err;			
+         cb(result);
+      });
+    },
+    updateOne: function ( tablename,colname, devoured, id, cb) {
       
-    }
-
-module.exports = ormBurger
-
+      connection.query("UPDATE ?? SET ?? = ? WHERE id = ?", [tablename, colname ,devoured , id], function (err, result) {
+        if (err) throw err;			
+        cb(result);
+        
+      });
+    },
+  };
+  
+  module.exports = orm;

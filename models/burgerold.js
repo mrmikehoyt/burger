@@ -1,13 +1,14 @@
-var orm = require('../config/orm.js');
+const orm = require('../config/orm.js');
 
-var burger = {
+const burger = {
 
-  		selectAll: function(cb){
-    	orm.selectAll( 'burgers',function(res){
+  selectAll: function(cb){
+    orm.selectAll( 'burgers',function(res){
 
-    		cb(res);
-    	});     
+      cb(res);
+    });     
   	},
+  
 
   		insertOne: function(burger_name, cb){
    		orm.insertOne('burgers','burger_name' , burger_name, function(res) {

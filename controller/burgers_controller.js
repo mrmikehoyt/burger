@@ -1,71 +1,40 @@
-const express = require('express')
-const burger = require('../models/burger')
-const router = express.Router()
+var express = require('express')
+var router = express.Router()
+var burger = require('../models/burger.js');
 
-/* HTML Routes */
-router.get('/', async function (req, res) {
-  const data = await burger.findAll()
-  res.render('index', { burgers: data })
-})
 
-/* API ROUTES */
-router.get('/api/burgers', async function (req, res) {
-  try {
-    const cats = await burger.findAll()
-    res.status(200).json({ data: burgers })
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
+// http://expressjs.com/en/guide/routing.html
 
-router.post('/api/burgers', async function (req, res) {
-  try {
-    const burger = new Burger(req.body)
-    await burger.save()
-    res.status(201).json(burger)
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
+// define the home page route
+router.get('/', function (req, res) {
+	 // res.send('test');
+   burger.selectAll(function (data) {
+    var handlebarObject = { burgers: data };
+    console.log(handlebarObject);
+    //render the index.handlebar page
+    res.render('index', handlebarObject);
 
-router.patch('/api/burgers/:id', async function (req, res) {
-  let burger = await Burger.findById(req.params.id)
-  if (!burger) return res.status(404).end()
+    });
 
-  burger = Object.assign(burger, req.body, { id: req.params.id })
+});
 
-  try {
-    await burger.save()
-    res.status(200).json(burger)
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
+// Create a New Burger to the DB
+router.post('/burger/create', function (req, res) {
+  burger.insertOne(req.body.burger_name, function() {
+    res.redirect('/');
+  });
+});
 
-router.put('/api/burgers/:id', async function (req, res) {
-  const burger = await burger.findById(req.params.id)
-  if (!burger) return res.status(404).end()
+// Devour a Burger
+router.post('/burger/eat', function (req, res) {
+  burger.updateOne(req.body.id, function() {
+    res.redirect('/');
+  });
+});
+router.post('/burger/restore', function (req, res) {
+  burger.restoreOne(req.body.id, function() {
+    res.redirect('/');
+  });
+});
 
-  burger.name = req.body.name
-  burger.devoured = req.body.devoured
-
-  try {
-    await burger.save()
-    res.status(200).json(burger)
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
-
-router.delete('/api/burgers/:id', async function (req, res) {
-  const burger = await Burger.findById(req.params.id)
-  if (!burger) return res.status(404).end()
-  try {
-    const deletedBurger = await burger.delete()
-    res.status(200).json(deletedBurger)
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
-
-module.exports = router
+module.exports = router;
