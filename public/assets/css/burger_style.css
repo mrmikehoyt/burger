@@ -1,0 +1,26 @@
+
+body {
+	background-color:#ffd13b;
+ 	background-repeat: no-repeat;
+ 	background-size: cover; 	
+    background-attachment: fixed;
+    background-position: center;
+
+ }
+
+.jumbotron {
+	background-color: sienna;
+}
+
+
+
+
+#submit-button {
+	display: block;
+	width: 300px;
+
+}
+
+
+
+
