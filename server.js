@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require("body-parser");
 const connection =require('./config/connection')
 const app = express();
-
+app.use(express.static("public"));// http://expressjs.com/en/guide/routing.html
 // Set the port of our application
 const PORT = process.env.PORT || 3000;
 // Serve static content for the app from the "public" directory in the application directory.
