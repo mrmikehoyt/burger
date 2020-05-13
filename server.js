@@ -6,7 +6,7 @@ const app = express();
 // Set the port of our application
 const PORT = process.env.PORT || 3000;
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(app.router);
+app.disable('etag');
 app.use(express.static("public"));
 
 
@@ -21,7 +21,7 @@ app.set("view engine", "handlebars");
 //used for routes
 var burgerroutes = require('./controller/burgers_controller.js')
 
-app.use('/*',burgerroutes)
+app.use('/',burgerroutes)
 
 
 // Start our server so that it can begin listening to client requests.
