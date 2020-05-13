@@ -6,7 +6,7 @@ const app = express();
 // Set the port of our application
 const PORT = process.env.PORT || 3000;
 // Serve static content for the app from the "public" directory in the application directory.
-app.disable('etag');
+app.set('etag', false);
 app.use(express.static("public"));
 
 
