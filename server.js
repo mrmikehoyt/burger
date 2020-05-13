@@ -4,7 +4,7 @@ const connection =require('./config/connection')
 const app = express();
 
 // Set the port of our application
-process.env.PORT || 3000;
+let PORT = process.env.PORT || 3000;
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
