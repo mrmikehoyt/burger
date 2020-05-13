@@ -2,7 +2,7 @@
 const mysql = require("mysql");
 //code to connect node to mysql database burgers_db
 if (process.env.JAWSDB_URL){
-  const connection = mysql.createConnection(process.env.JAWSDB_URL)
+  const connection2 = mysql.createConnection(process.env.JAWSDB_URL)
 }
 else {
 const connection = mysql.createConnection({
@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
   password: "securepassword",
   database: "burgers_db"
 })
-return connection
+return connection + connection2
 };
 
 //;
