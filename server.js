@@ -4,7 +4,7 @@ const connection =require('./config/connection')
 const app = express();
 
 // Set the port of our application
-let PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
@@ -20,10 +20,8 @@ app.set("view engine", "handlebars");
 //used for routes
 var burgerroutes = require('./controller/burgers_controller.js')
 
-app.use(burgerroutes)
-app.get('/', function (req, res) {
-  res.json(path.join(__dirname, 'public/index.html'))
-})
+app.use('/',burgerroutes)
+
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
