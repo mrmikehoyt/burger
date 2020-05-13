@@ -2,8 +2,8 @@ var express = require('express')
 var router = express.Router()
 var burger = require('../models/burger.js')
 
-
-// http://expressjs.com/en/guide/routing.html
+app.set('etag', false);
+app.use(express.static("public"));// http://expressjs.com/en/guide/routing.html
 
 // define the home page route
 router.get('/*', function (req, res) {
