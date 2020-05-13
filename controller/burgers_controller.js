@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static("public"));// http://expressjs.com/en/guide/routing.html
 
 // define the home page route
-router.get('/*', function (req, res) {
+router.get('/', function (req, res) {
 	 // res.send('test');
    burger.selectAll(function (data) {
     var handlebarObject = { burgers: data };
