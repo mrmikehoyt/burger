@@ -6,13 +6,13 @@ var burger = require('../models/burger.js')
 // http://expressjs.com/en/guide/routing.html
 
 // define the home page route
-router.get('/', function (req, res) {
+router.get('/*', function (req, res) {
 	 // res.send('test');
    burger.selectAll(function (data) {
     var handlebarObject = { burgers: data };
     console.log(handlebarObject);
     //render the index.handlebar page
-    res.render('../views/layouts/index.handlebars', handlebarObject);
+    res.render('index', handlebarObject);
 
     });
 
