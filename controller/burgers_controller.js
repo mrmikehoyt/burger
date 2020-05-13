@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var burger = require('../models/burger.js');
+var burger = require('../models/burger.js')
 
 
 // http://expressjs.com/en/guide/routing.html
@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
     var handlebarObject = { burgers: data };
     console.log(handlebarObject);
     //render the index.handlebar page
-    res.render('index', handlebarObject);
+    res.render('../views/layouts/index.handlebars', handlebarObject);
 
     });
 
