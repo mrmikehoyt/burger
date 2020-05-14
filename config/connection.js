@@ -1,7 +1,7 @@
 //to require mysql
 var mysql = require("mysql");
 var connection;
-//code to connect node to mysql database burgers_db
+//code to connect node to mysql database burgers_db . if it's local connects using else
 if (process.env.JAWSDB_URL){
   connection = mysql.createConnection(process.env.JAWSDB_URL)
 }
@@ -17,7 +17,7 @@ else {
 
 }
 
-//;
+
 
 connection.connect(function(err) {
   if (err) {
