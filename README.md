@@ -9,12 +9,12 @@
 ## This application uses Routes, SQL, A Custom ORM, Handlebars as well as Heroku
 
 # Built with
-![alt_text] (https://img.shields.io/badge/Technologies-ORM-green)
+![alt_text](https://img.shields.io/badge/Technologies-ORM-green)
 #
-![alt_text] (https://img.shields.io/badge/Technologies-Handlebars-green)
+![alt_text](https://img.shields.io/badge/Technologies-Handlebars-green)
 #
-![alt_text] (https://img.shields.io/badge/Technologies-SQL-green)
+![alt_text](https://img.shields.io/badge/Technologies-SQL-green)
 #
-![alt_text] (https://img.shields.io/badge/Technologies-SQL-green)
+![alt_text](https://img.shields.io/badge/Technologies-SQL-green)
 #
-![alt_text] (https://img.shields.io/badge/Technologies-nodeJS-green)
+![alt_text](https://img.shields.io/badge/Technologies-nodeJS-green)
