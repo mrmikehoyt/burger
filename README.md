@@ -20,3 +20,22 @@
 ![alt_text](https://img.shields.io/badge/Required-mySQL-red)
 ![alt_text](https://img.shields.io/badge/Required-nodeJS%20Compiler-red)
 
+## Instructions
+#
+1.  Download Visual Studio code from https://code.visualstudio.com/download 
+#
+2. Download nodeJS compiler from https://nodejs.org/en/download/current/
+#
+3. Download mySQL from https://dev.mysql.com/downloads/windows/installer/8.0.html for mac use https://dev.mysql.com/downloads/mysql
+#
+4. Install the software
+#
+5. do a clone with https and download the source code
+#
+6. Launch the command prompt or if you have gitbash installed launch gitbash
+#
+7. Run node server.js
+#
+8. Open your web browser and go to localhost:3000
+
+
