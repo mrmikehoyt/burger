@@ -18,4 +18,5 @@
 ## Prerequistes
 ![alt_text](https://img.shields.io/badge/Required-VSCode-red)
 ![alt_text](https://img.shields.io/badge/Required-mySQL-red)
-!
+![alt_text](https://img.shields.io/badge/Required-nodeJS%20Compiler-red)
+
