@@ -14,3 +14,8 @@
 ![alt_text](https://img.shields.io/badge/Technologies-SQL-green)
 ![alt_text](https://img.shields.io/badge/Technologies-SQL-green)
 ![alt_text](https://img.shields.io/badge/Technologies-nodeJS-green)
+
+## Prerequistes
+![alt_text](https://img.shields.io/badge/Required-VSCode-red)
+![alt_text](https://img.shields.io/badge/Required-mySQL-red)
+!
